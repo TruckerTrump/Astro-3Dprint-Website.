@@ -145,8 +145,8 @@
     background:linear-gradient(to top, rgba(10,14,26,0.92), transparent);
     display:flex; flex-direction:column; gap:4px;
   }
-  plate-caption .name{ font-family:'Fraunces', serif; font-style:italic; font-size:1.05rem;}
-  plate-caption .data{
+  .plate-caption .name{ font-family:'Fraunces', serif; font-style:italic; font-size:1.05rem;}
+  .plate-caption .data{
     font-family:'JetBrains Mono', monospace; font-size:0.7rem; color:var(--starlight-dim);
     display:flex; gap:12px; flex-wrap:wrap;
   }
@@ -163,13 +163,30 @@
   .print-card:hover{background:var(--graphite-2); }
   .print-icon{width:44px; height:44px; }
   .print-icon svg{width:100%; height:100%; stroke:var(--filament); fill:none; stroke-width:1.3; }
+  .print-photo{
+    width:100%; aspect-ratio:4/3; object-fit:contain;
+    border-radius:2px; display:block;
+  }
+  .print-price{
+    font-family:'JetBrains Mono', monospace; font-size:1rem; color:var(--filament);
+    margin-top:-6px;
+  }
+  .buy-btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:10px 18px; margin-top:auto;
+    background:var(--filament); color:var(--void);
+    font-family:'Inter', sans-serif; font-weight:600; font-size:0.85rem;
+    border-radius:2px; text-align:center;
+    transition:opacity 0.2s ease;
+  }
+  .buy-btn:hover{ opacity:0.85; }
   .print-card h3{font-size:1.2rem; font-weight:500; }
   .print-specs{
-    font-family:'JetBrains Mono', monospace; font-size:0.76rem; color:var(--stralight-dim);
+    font-family:'JetBrains Mono', monospace; font-size:0.76rem; color:var(--starlight-dim);
     display:flex; flex-direction:column; gap:6px; margin-top:auto; padding-top:1px solid var(--line);
   }
   .print-specs div{display:flex; justify-content:space-between; gap:12px; }
-  .print-specs .val{color:var(--fliament); }
+  .print-specs .val{color:var(--filament); }
   /*--------- About ---------*/
   .about{
     display:grid; grid-template-columns:1fr 1fr; gap:54px;
@@ -229,7 +246,7 @@
     <div class="nav-mark"><span></span>Faint Signal</div>
     <div class="nav-links">
       <a href="#astro">Astrophotography</a>
-      <a href="#print">3D Prints</a>
+      <a href="#prints">3D Prints</a>
       <a href="#about">Equipment</a>
       <a href="#contact">Contact</a>
     </div>
@@ -303,31 +320,44 @@
       </div>
       <div class="section-index">02 /catalog</div>
     </div>
-    <div class="print-grid">
-      <div class="print-card">
-        <div class="print-icon">
-          <svg viewbox="0 0 48 48"><path d="M8 34 L24 6 L40 34 Z"/><path d="M14 24 L34 24"/><circle cx="24" cy="34" r="10"/></svg>
-        </div>
-        <h3>Something to Sell 1</h3>
-        <p style="color:var(--starlight-dim); font-size:0.9rem;">Threaded collar that fits a 8" SCT</p>
-        <div class="print-specs">
-          <div><span>Material</span><span class="val">PETG</span></div>
-          <div><span>Print Times</span><span class="val">6h 40min</span></div>
-          <div><span>Dimensions</span><span class="val">210 x 210 x 40mm</span></div>
-        </div>
-      </div>
-      <div class="print-card">
-        <div class="print-icon">
-          <svg viewbox="0 0 48 48"><circle cx="24" cy="26" r="16"/><circle cx="24" cy="24" r="4"/><path d="M24 8 L24 40 M8 24 L4 24 M44 24 L40 24"/></svg>
-        </div>
-        <h3>Holden Lion Logo</h3>
-        <p style="color:var(--starlight-dim); font-size:0.9rem;">Made from Red an White PLA it looks amazing on the wall for bathurst.</p>
-        <div class="print-specs">
-          <div><span>Material</span><span class="val">ASA</span></div>
-          <div><spam>Print Times</spam><span class="val">3h 15mins</span></div>
-          <div><span>Dimensions</span><span class="val">170mm round or 220mm round.</span></div>
-        </div>
-      </div>
+  <div class="print-grid">
+<div class="print-card">
+  <img class="print-photo" src="Pictures/Spongebob.jpg" alt="Threaded dew shield collar">
+  <h3>SpongeBob Square Pants</h3>
+  <p style="color:var(--starlight-dim); font-size:0.9rem;">Spongbob is great for a childs birthday or an present for yourself.</p>
+  <div class="print-specs">
+    <div><span>Material</span><span class="val">PLA</span></div>
+    <div><span>Print Time</span><span class="val">6h 40min</span></div>
+    <div><span>Dimensions</span><span class="val">150mm Tall</span></div>
+  </div>
+  <div class="print-price">$35</div>
+  <a class="buy-btn" href="mailto:kiwiforge3d@outlook.com?subject=Enquiry: Spongebob Square Pants">Message to buy</a>
+</div>
+<div class="print-card">
+  <img class="print-photo" src="Pictures/HoldenLionLogo.jpg" alt="Holden Lion logo print">
+  <h3>Holden Lion Logo</h3>
+  <p style="color:var(--starlight-dim); font-size:0.9rem;">Made from red and white PLA, looks amazing on the wall for Bathurst.</p>
+  <div class="print-specs">
+    <div><span>Material</span><span class="val">PLA</span></div>
+    <div><span>Print Time</span><span class="val">3h</span></div>
+    <div><span>Dimensions</span><span class="val">170mm round or 220mm round</span></div>
+  </div>
+  <div class="print-price">$25</div>
+  <a class="buy-btn" href="mailto:kiwiforge3d@outlook.com?subject=Enquiry: Holden Lion Logo">Message to buy</a>
+</div>
+<div class="print-card">
+  <img class="print-photo" src="Pictures/FordLogo.jpg" alt="Ford Logo">
+  <h3>Ford Logo</h3>
+  <p style="color:var(--starlight-dim); font-size:0.9rem;">Made from blue an white PLA this ford logo is great for ford lovers and an amazing wall decoration for bathurst.</p>
+  <div class="print-specs">
+    <div><span>Material</span><span class="val">PLA</span></div>
+    <div><span>Print Time</span><span class="val">1h</span></div>
+    <div><span>Dimensions</span><span class="val">150mm</span></div>
+  </div>
+  <div class="print-price">$25</div>
+  <a class="buy-btn" href="mailto:kiwiforge3d@outlook.com?subject=Enquiry: PRINT NAME">Message to buy</a>
+</div>
+</div>
     </div>
   </section>
   <section id="about">
@@ -355,8 +385,8 @@
     <div class="contact">
       <h2>Prints available, Prints on Request.</h2>
       <div class="contact-links">
-        <a href="mailto:kiwiforge3d@outlook.com">kiwiforge3d@outlook.com</a>
-        <a href="#">Instagram</a>
+        <a href="gmail:kiwiforge3d@outlook.com">kiwiforge3d@outlook.com</a>
+        <a href="https://www.facebook.com/profile.php?id=61589763970171">Facebook</a>
       </div>
     </div>
   </section>
